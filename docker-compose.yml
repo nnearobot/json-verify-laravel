@@ -67,6 +67,18 @@ services:
             retries: 3
             timeout: 5s
 
+    frontend:
+        container_name: verifyapi-frontend
+        build:
+            context: react/
+            dockerfile: Dockerfile
+        networks:
+            - sail
+        env_file:
+            - .env
+        ports:
+            - 4173:4173
+
 networks:
     sail:
         driver: bridge
