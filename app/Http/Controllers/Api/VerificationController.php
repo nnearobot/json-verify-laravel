@@ -54,7 +54,7 @@ class VerificationController extends Controller
 
         // The API should return a 200 status code even if the file is not verified
         return response()->json([
-            'issuer' => $jsonData->issuer->name ?? '',
+            'issuer' => $json->data->issuer->name ?? '',
             'result' => $result,
         ], ResponseAlias::HTTP_OK);
     }
