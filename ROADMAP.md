@@ -2,7 +2,7 @@
 
 This is a simple API that implements a json document verification.
 
-# Implemented files
+## Implemented files
 
 The controller files of this API are located in the `app/Http/Controllers/Api` directory:
 
@@ -22,5 +22,3 @@ PhpUnit tests described in a `tests/Feature/VerificationControllerTest.php` file
 
 There are a directory `/tests/test_files` that contains a files with different invalid formats for testing purposes.
 Please use a .pdf file in this directory to test for an **invalid file format** and **invalid file size** errors.
-
-
