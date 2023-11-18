@@ -22,6 +22,16 @@ class VerificationControllerTest extends TestCase
         $this->actingAs($this->user);
     }
 
+    public function test_invalid_file()
+    {
+        $file = $this->getFile('Rachmninoff_Rhapsody_on_a_Theme_by_Paganini.pdf');
+        $response = $this->postJson('/api/verify', ['json_file' => $file]);
+        $response->assertInvalid(['json_file' => [
+            'The json file field must be a file of type: json.',
+            'The json file field must not be greater than 2048 kilobytes.'
+        ]]);
+    }
+
     public function test_invalid_recipient()
     {
         $file = $this->getFile('invalid_recipient_name.oa');
