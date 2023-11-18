@@ -43,7 +43,7 @@ export default function UploadForm() {
       <div className="w-[100%] relative z-1 bg-white/40 p-6 shadow">
         <form onSubmit={onSubmit}>
           <H1>Upload an OpenAttestation file</H1>
-          <div className="mt-10 mb-6"><input type="file" onChange={onFileChange} accept=".oa" /></div>
+          <div className="mt-10 mb-6"><input type="file" onChange={onFileChange} accept=".oa, .pdf" /></div>
           <Button>Upload and verify</Button>
         </form>
         {errors &&
@@ -52,7 +52,7 @@ export default function UploadForm() {
           </div>
         }
         {result &&
-          <div className="text-green-600 mt-5 text-lg">{result}</div>
+          <div className={`${result === 'verified' ? 'text-green-600' : 'text-rose-600'} mt-5 text-lg`}>{result}</div>
         }
       </div>
     </div>

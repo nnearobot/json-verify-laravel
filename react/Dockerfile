@@ -1,13 +1,12 @@
-FROM node:20
+FROM node:latest
 
-RUN mkdir /usr/src/verify
-WORKDIR /usr/src/verify
+WORKDIR /app
 
+COPY package.json .
 COPY . .
-COPY .env ./.env
 
 RUN npm install
 
 EXPOSE 4173
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
